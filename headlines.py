@@ -2,11 +2,16 @@ from flask import Flask
 import feedparser
 app = Flask(__name__)
 
-BBC_FEED = "http://feeds.bbci.co.uk/news/rss.xml?edition=uk"
+rss_feeds ={
+"bbc":"http://feeds.bbci.co.uk/news/rss.xml?edition=uk",
+"cnn":"http://rss.cnn.com/rss/edition.rss",
+"fox":"http://feeds.foxnews.com/foxnews/latest"
+}
 
 @app.route('/')
-def get_news():
-    feed = feedparser.parse(BBC_FEED)
+@app.route('/<publication>')
+def get_news(publication = 'bbc'):
+    feed = feedparser.parse(rss_feeds[publication])
     first_article = feed['entries'][0]
     return """<html>
         <body>
