@@ -1,0 +1,1 @@
+A Flask Web App to display Headlines Using RSS feeds from CNN, BBC, FOXNEWS and Guardian(Nigeia). It also performs currency conversion using  the open currency api and it retrieves weather data in JSON format
