@@ -6,6 +6,12 @@
   </head>
   <body>
     <h1>Headlines</h1>
+    <form>
+      <input type="text" name="publication" placeholder="Search">
+      <input type="submit"  value="Submit">
+
+    </form>
+    <br>
     {% for article in articles %}
           <b><a href="{{article.link}}">{{article.title}}</a></b>
           <i>{{article.published}}</i>
